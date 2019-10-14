@@ -1,6 +1,6 @@
 (ns hiccup2.element
   "Functions for creating generic HTML elements."
-  (:require #_[hiccup.compiler :as compiler]
+  (:require [hiccup.compiler :as compiler]
             [hiccup2.def :refer [defelem]]
             [hiccup.util :as util]))
 
@@ -8,7 +8,7 @@
   "Create an HTML comment tag (\"<!--s-->\")."
   {:added "2.0"}
   [s]
-  (let [s (if (util/raw-string? s) s #_(compiler/escape-html s))]
+  (let [s (if (util/raw-string? s) s (compiler/escape-html s))]
     (util/raw-string (str "<!--" s "-->"))))
 
 (defn javascript-tag
