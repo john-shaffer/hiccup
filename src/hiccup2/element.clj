@@ -4,7 +4,7 @@
             [hiccup.util :as util]))
 
 (defn html-comment
-  "Create an HTML comment tag (\"<!-- s -->\")."
+  "Create an HTML comment tag (\"<!--s-->\")."
   {:added "2.0"}
   [s]
   (let [s (if (util/raw-string? s) s (util/raw-string s))]
